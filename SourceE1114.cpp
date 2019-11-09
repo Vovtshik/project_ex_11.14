@@ -2,15 +2,15 @@
 
 void in_file_text(string& name_file, vector<string>&vs);            // The function of reading text from file to vector.
 void number_characters_each_category(const string&s, int& al, int& sp, int& di);
-void out_file_string(string& name_file, const string& n, const int& al, const int& sp, const int& di);          // The function of writing text from a vector to a file.
+void out_file_string(string& nin, const string& nout, const int& al, const int& sp, const int& di);          // The function of writing text from a vector to a file.
 
 int main()
 {
     vector<string>vs;
     cout << "Enter file name to read text:\n";
-    string name;
-    cin >> name;
-    in_file_text(name, vs);
+    string name_in;
+    cin >> name_in;
+    in_file_text(name_in, vs);
     int alpha = 0;
     int space = 0;
     int digit = 0;
@@ -18,10 +18,10 @@ int main()
     {
         number_characters_each_category(s, alpha, space, digit);
     }
-    string rizult ="In the text from the " + name + " file, the number of characters in the categories: letters - " + alpha + " whitespace characters - " pppp; decimal digits - ddd"
     cout << "Enter a file name to record the character counts for each category:\n";
-    cin >> name;
-    out_file_text(vsr, name);
+    string name_out;
+    cin >> name_out;
+    out_file_text(name_out, name_in, alpha, space, digit);
     return 0;
 }
 
@@ -61,9 +61,9 @@ void number_characters_each_category( const string&s, int& al, int& sp, int& di)
 }
 
 
-void out_file_string(string& name_file, string str);
+void out_file_string(string& nin, const string& nout, const int& al, const int& sp, const int& di)
 {
-    ofstream ost{name_file};
-    if (!ost) error("Unable to open output file ", name_file);
-    ost << "In the text from the " << name << " file, the number of characters in the categories: letters - " << alpha << " whitespace characters - " << space << "; decimal digits - " << digit ;
+    ofstream ost{nout};
+    if (!ost) error("Unable to open output file ", nout);
+    ost << "In the text from the " << nin << " file, the number of characters in the categories: letters - " << al << "; whitespace characters - " << sp << "; decimal digits - " << di << ".\n";
 }

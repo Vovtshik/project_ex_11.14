@@ -1,7 +1,7 @@
 #include "../std_lib_facilities.h"
 
-void in_file_text(string& name_file, vector<string>&vs);                                              // The function of reading text from file to vector.
-void number_characters_each_category(const string&s, int& al, int& sp, int& di, int& pu);                      // The function for counting the characters of each category in a string and passing the results by reference in arguments.
+void in_file_text(string& name_file, vector<string>&vs);                                                             // The function of reading text from file to vector.
+void number_characters_each_category(const string&s, int& al, int& sp, int& di, int& pu);                            // The function for counting the characters of each category in a string and passing the results by reference in arguments.
 void out_file_string(const string& nout, string& nin, const int& al, const int& sp, const int& di, const int& pu);   // Function for outputting to the file the results of counting characters of each category:
 
 int main()

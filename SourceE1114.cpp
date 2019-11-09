@@ -62,6 +62,7 @@ void in_file_text(string& name_file, vector<string>&vs)
                 {
                     str_t = ch;
                     vs.push_back(str_t);
+                    str_t.clear();
                 }
             }
         }

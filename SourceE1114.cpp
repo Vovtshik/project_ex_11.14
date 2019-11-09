@@ -2,7 +2,7 @@
 
 void in_file_text(string& name_file, vector<string>&vs);            // The function of reading text from file to vector.
 void number_characters_each_category(const string&s, int& al, int& sp, int& di);
-void out_file_string(string& name_file, string rezult);          // The function of writing text from a vector to a file.
+void out_file_string(string& name_file, string str);          // The function of writing text from a vector to a file.
 
 int main()
 {
@@ -61,17 +61,9 @@ void number_characters_each_category( const string&s, int& al, int& sp, int& di)
 }
 
 
-void out_file_text(vector<string>& vs, string& name_file)
+void out_file_string(string& name_file, string str);
 {
     ofstream ost{name_file};
    if (!ost) error("Unable to open output file ", name_file);
-   for(string x: vs)
-   {
-        if(x != "\n")
-            ost << x << " ";
-        else
-        {
-            ost << x;
-        }
-   }
+   
 }

@@ -21,7 +21,7 @@ int main()
     cout << "Enter a file name to record the character counts for each category:\n";
     string name_out;
     cin >> name_out;
-    out_file_text(name_out, name_in, alpha, space, digit);
+    out_file_string(name_out, name_in, alpha, space, digit);
     return 0;
 }
 

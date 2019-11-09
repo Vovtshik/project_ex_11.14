@@ -2,7 +2,7 @@
 
 void in_file_text(string& name_file, vector<string>&vs);                                              // The function of reading text from file to vector.
 void number_characters_each_category(const string&s, int& al, int& sp, int& di);                      // The function for counting the characters of each category in a string and passing the results by reference in arguments.
-void out_file_string(string& nin, const string& nout, const int& al, const int& sp, const int& di);   // Function for outputting to the file the results of counting characters of each category:
+void out_file_string(const string& nout, string& nin, const int& al, const int& sp, const int& di);   // Function for outputting to the file the results of counting characters of each category:
 
 int main()
 {
@@ -61,7 +61,7 @@ void number_characters_each_category( const string&s, int& al, int& sp, int& di)
 }
 
 
-void out_file_string(string& nin, const string& nout, const int& al, const int& sp, const int& di)
+void out_file_string(const string& nout, string& nin, const int& al, const int& sp, const int& di)
 {
     ofstream ost{nout};
     if (!ost) error("Unable to open output file ", nout);

@@ -1,7 +1,7 @@
 #include "../std_lib_facilities.h"
 
 void in_file_text(string& name_file, vector<string>&vs);            // The function of reading text from file to vector.
-
+string number_characters_each_category(vector<string>&vs);
 void out_file_text(vector<string>& vs, string& name_file);          // The function of writing text from a vector to a file.
 
 int main()

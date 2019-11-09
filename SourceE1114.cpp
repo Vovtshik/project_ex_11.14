@@ -11,7 +11,10 @@ int main()
     string name;
     cin >> name;
     in_file_text(name, vs);
-
+    int alpha = 0;
+    int space = 0;
+    int digit = 0;
+    
 
     cout << "Enter a file name for recording converted text:\n";
     cin >> name;

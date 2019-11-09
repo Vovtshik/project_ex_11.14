@@ -2,7 +2,7 @@
 
 void in_file_text(string& name_file, vector<string>&vs);            // The function of reading text from file to vector.
 void number_characters_each_category(const string&s, int& al, int& sp, int& di);
-void out_file_text(vector<string>& vs, string& name_file);          // The function of writing text from a vector to a file.
+void out_file_string(string& name_file, string rezult);          // The function of writing text from a vector to a file.
 
 int main()
 {
@@ -14,9 +14,12 @@ int main()
     int alpha = 0;
     int space = 0;
     int digit = 0;
-    
+    for(string s: vs)
+    {
+        number_characters_each_category(s, alpha, space, digit);
+    }
 
-    cout << "Enter a file name for recording converted text:\n";
+    cout << "Enter a file name to record the character counts for each category:\n";
     cin >> name;
     out_file_text(vsr, name);
     return 0;

@@ -34,21 +34,13 @@ void in_file_text(string& name_file, vector<string>&vs)
     string new_line = "\n";
     for(string temp; getline(ist, temp);)
     {
-        /* {
-            stringstream ss(temp);
-            for(string s; ss >> s;)
-            {
-                vs.push_back(s);
-            }
-        } */
         {
             stringstream ss(temp);
             string str_t;
             for(char ch; ss.get(ch);)
             {
                 if(isalpha(ch))
-                {
-                    
+                {                    
                     if(isalpha(ss.peek()))
                         str_t += ch;
                     else
@@ -87,7 +79,6 @@ void number_characters_each_category( const string&s, int& al, int& sp, int& di,
             continue;
     }
 }
-
 
 void out_file_string(const string& nout, string& nin, const int& al, const int& sp, const int& di, const int& pu)
 {

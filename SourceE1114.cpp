@@ -64,6 +64,6 @@ void number_characters_each_category( const string&s, int& al, int& sp, int& di)
 void out_file_string(string& name_file, string str);
 {
     ofstream ost{name_file};
-   if (!ost) error("Unable to open output file ", name_file);
-   
+    if (!ost) error("Unable to open output file ", name_file);
+    ost << str;
 }

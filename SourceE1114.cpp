@@ -6,7 +6,16 @@ void out_file_text(vector<string>& vs, string& name_file);          // The funct
 
 int main()
 {
+    vector<string>vs;
+    cout << "Enter file name to read text:\n";
+    string name;
+    cin >> name;
+    in_file_text(name, vs);
 
+
+    cout << "Enter a file name for recording converted text:\n";
+    cin >> name;
+    out_file_text(vsr, name);
     return 0;
 }
 

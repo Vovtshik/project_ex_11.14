@@ -1,7 +1,7 @@
 #include "../std_lib_facilities.h"
 
 void in_file_text(string& name_file, vector<string>&vs);            // The function of reading text from file to vector.
-void number_characters_each_category(string&s, int& al, int& sp, int& di);
+void number_characters_each_category(const string&s, int& al, int& sp, int& di);
 void out_file_text(vector<string>& vs, string& name_file);          // The function of writing text from a vector to a file.
 
 int main()
@@ -38,6 +38,22 @@ void in_file_text(string& name_file, vector<string>&vs)
             vs.push_back(new_line);
     }
 }
+
+void number_characters_each_category( const string&s, int& al, int& sp, int& di)
+{
+    for(char ch: s)
+    {
+        if(isspace(ch))
+            ++sp;
+        else if(isalpha(ch))
+            ++al;
+        else if(isdigit(ch))
+            ++di;
+        else
+            continue;
+    }
+}
+
 
 void out_file_text(vector<string>& vs, string& name_file)
 {

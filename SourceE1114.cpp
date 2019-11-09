@@ -47,14 +47,21 @@ void in_file_text(string& name_file, vector<string>&vs)
             {
                 if(isalpha(ch))
                 {
-                    str_t += ch;
-                            
-                }
                     
+                    if(isalpha(ss.peek()))
+                        str_t += ch;
+                    else
+                    {
+                        str_t += ch;
+                        vs.push_back(str_t);
+                        str_t.clear();
+                    }
+                }
                 else
-
-                
-
+                {
+                    str_t = ch;
+                    vs.push_back(str_t);
+                }
             }
         }
         if(!ist.eof())

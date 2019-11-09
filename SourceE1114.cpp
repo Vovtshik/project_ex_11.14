@@ -1,8 +1,8 @@
 #include "../std_lib_facilities.h"
 
 void in_file_text(string& name_file, vector<string>&vs);                                              // The function of reading text from file to vector.
-void number_characters_each_category(const string&s, int& al, int& sp, int& di);                      // The function for counting the characters of each category in a string and passing the results by reference in arguments.
-void out_file_string(const string& nout, string& nin, const int& al, const int& sp, const int& di);   // Function for outputting to the file the results of counting characters of each category:
+void number_characters_each_category(const string&s, int& al, int& sp, int& di, int& pu);                      // The function for counting the characters of each category in a string and passing the results by reference in arguments.
+void out_file_string(const string& nout, string& nin, const int& al, const int& sp, const int& di, const int& pu);   // Function for outputting to the file the results of counting characters of each category:
 
 int main()
 {
@@ -69,7 +69,7 @@ void in_file_text(string& name_file, vector<string>&vs)
     }
 }
 
-void number_characters_each_category( const string&s, int& al, int& sp, int& di)
+void number_characters_each_category( const string&s, int& al, int& sp, int& di, int& pu)
 {
     for(char ch: s)
     {
@@ -79,15 +79,17 @@ void number_characters_each_category( const string&s, int& al, int& sp, int& di)
             ++al;
         else if(isdigit(ch))
             ++di;
+        else if(ispunct(ch))
+            ++pu;
         else
             continue;
     }
 }
 
 
-void out_file_string(const string& nout, string& nin, const int& al, const int& sp, const int& di)
+void out_file_string(const string& nout, string& nin, const int& al, const int& sp, const int& di, const int& pu)
 {
     ofstream ost{nout};
     if (!ost) error("Unable to open output file ", nout);
-    ost << "In the text from the " << nin << " file, the number of characters in the categories: letters - " << al << "; whitespace characters - " << sp << "; decimal digits - " << di << ".\n";
+    ost << "In the text from the " << nin << " file, the number of characters in the categories: letters - " << al << "; whitespace characters - " << sp << "; decimal digits - " << di << "; punctuation marks - " << pu << ".\n";
 }

@@ -14,14 +14,15 @@ int main()
     int alpha = 0;
     int space = 0;
     int digit = 0;
+    int punctuation_marks = 0;
     for(string s: vs)
     {
-        number_characters_each_category(s, alpha, space, digit);
+        number_characters_each_category(s, alpha, space, digit, punctuation_marks);
     }
     cout << "Enter a file name to record the character counts for each category:\n";
     string name_out;
     cin >> name_out;
-    out_file_string(name_out, name_in, alpha, space, digit);
+    out_file_string(name_out, name_in, alpha, space, digit, punctuation_marks);
     return 0;
 }
 
